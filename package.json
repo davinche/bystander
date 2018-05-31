@@ -1,0 +1,50 @@
+{
+  "name": "bystander",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babel-minify": "^0.4.3",
+    "jest": "^23.1.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.59.4",
+    "typescript": "^2.9.1",
+    "ts-jest": "^22.4.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "npm run build && npm run clean && npm run bundle && npm run minify",
+    "build": "tsc",
+    "bundle": "rollup -f cjs -i ./es2015/bystander.js -o ./dist/bystander.js",
+    "minify": "minify ./dist/bystander.js -o ./dist/bystander.min.js",
+    "clean": "rimraf ./dist",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "watch": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davinche/bystander.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davinche/bystander/issues"
+  },
+  "homepage": "https://github.com/davinche/bystander#readme",
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}

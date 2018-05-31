@@ -1,0 +1,6 @@
+coverage/
+es2015/
+node_modules/
+package-lock.json
+src/
+tsconfig.json
